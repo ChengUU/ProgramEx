@@ -1,7 +1,7 @@
 # include<iostream>
 # include<string>
-#include<iomanip>
-#include<cmath>
+# include<iomanip>
+# include<cmath>
 # define S_BOX_IN_LEN 6
 //S盒子输入长度
 # define ENCODE_TURNS 16
@@ -371,7 +371,7 @@ string DESEncode(string str,string key){
      int blank=len%FULL_BITS_LENGTH;
     blank=(0==blank)?0:FULL_BITS_LENGTH-blank;
     len+=blank;
-    cout<<len<<endl;
+   // cout<<len<<endl;
     // 对原始数据进行分段加密
     int d=len/FULL_BITS_LENGTH;
     int key_len=key.length();
@@ -382,7 +382,7 @@ string DESEncode(string str,string key){
          //每８个字符为一段
         int pos=i*FULL_BITS_LENGTH;
         string tmp=str.substr(pos,FULL_BITS_LENGTH);
-        cout<<tmp<<endl;
+        //cout<<tmp<<endl;
         //将字符串转换为二进制数组
         int* p=stringToBinaryArray(tmp);
         //初始逆置换
@@ -411,7 +411,7 @@ string DESEncode(string str,string key){
         }
         data=repace_op(data,IP_1,IP_LENGTH);
         string toString=binaryArrayToString(data,IP_LENGTH);
-        cout<<toString<<endl;
+       // cout<<toString<<endl;
         encodeRes.append(toString);
     }
     return encodeRes;

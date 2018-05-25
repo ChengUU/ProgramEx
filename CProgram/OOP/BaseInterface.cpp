@@ -18,7 +18,12 @@ public:
     }
 };
 int main(){
+    //接口类只提供接口方法，不提供实现
+    //　BaseInterface base;// error
+    //通过接口可以动态指定实例对象
     BaseInterface* base=new Person();
+    base->eat();
+    base=new Dog();
     base->eat();
     return 0;
 }

@@ -73,6 +73,12 @@ int main(){
     Car car(4,4,8);
     Bus bus(2,100,10,12);
     Truck truck(35.0f,1,12,15);
+    showInfo(car);
+    showInfo(bus);
+    showInfo(truck);
+
+    cout<<endl<<"------------------------------------------------------"<<endl;
+
     Motor *motors[]={&car,&bus,&truck};
     for(int i=0;i<3;i++){
         showInfo(*motors[i]);
